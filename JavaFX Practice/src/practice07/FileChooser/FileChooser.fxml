@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="422.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="practice07.FileChooser.FileChooserController">
+   <children>
+      <Button fx:id="btn1" layoutX="14.0" layoutY="24.0" mnemonicParsing="false" onAction="#btnClicked1" text="Select 1" />
+      <Button fx:id="btn2" layoutX="14.0" layoutY="105.0" mnemonicParsing="false" onAction="#btnClicked2" text="Select 1+" />
+      <ListView fx:id="listview" layoutX="86.0" layoutY="18.0" prefHeight="200.0" prefWidth="200.0" />
+      <ImageView fx:id="img" fitHeight="150.0" fitWidth="200.0" layoutX="293.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true" />
+      <ImageView fx:id="img2" fitHeight="121.0" fitWidth="169.0" layoutX="293.0" layoutY="158.0" onMouseClicked="#changeImage" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../../../Pictures/google-mobile3-colors-ss-1920-800x450.jpg" />
+         </image>
+      </ImageView>
+      <Spinner fx:id="spin" editable="true" layoutX="14.0" layoutY="228.0" />
+      <Button layoutX="160.0" layoutY="228.0" mnemonicParsing="false" onAction="#show" text="Button" />
+      <GridPane fx:id="gridp" layoutX="121.0" layoutY="287.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+      </GridPane>
+   </children>
+</AnchorPane>

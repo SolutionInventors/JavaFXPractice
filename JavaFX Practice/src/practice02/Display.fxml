@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="264.0" prefWidth="297.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="practice02.MainController">
+   <children>
+      <Button layoutX="129.0" layoutY="172.0" mnemonicParsing="false" onAction="#generateRandom" text="Gen Random" />
+      <Label fx:id="myLabel" layoutX="66.0" layoutY="41.0" prefHeight="70.0" prefWidth="126.0" />
+   </children>
+</AnchorPane>

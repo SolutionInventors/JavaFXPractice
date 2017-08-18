@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ColorPicker?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+   <children>
+      <ComboBox layoutX="130.0" layoutY="151.0" prefWidth="150.0" />
+      <DatePicker layoutX="-15.0" layoutY="50.0" />
+      <ColorPicker layoutX="218.0" layoutY="288.0" />
+   </children>
+</AnchorPane>

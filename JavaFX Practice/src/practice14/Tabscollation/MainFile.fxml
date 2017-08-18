@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<TabPane >
+    <tabs>
+        <Tab text="Untitled Tab 1">
+            <content>
+                <fx:include  source="Testtab.fxml"/>
+            </content>
+        </Tab>
+       
+    </tabs>
+</TabPane>
