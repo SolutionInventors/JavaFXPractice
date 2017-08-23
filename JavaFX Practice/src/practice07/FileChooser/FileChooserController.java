@@ -15,6 +15,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.stage.FileChooser;
+import javafx.stage.Stage;
 import javafx.stage.FileChooser.ExtensionFilter;
 
 public class FileChooserController {
@@ -87,10 +88,12 @@ public class FileChooserController {
 	public void btnClicked1(ActionEvent e) throws MalformedURLException {
 		FileChooser fc = new FileChooser();
 		//if you want to open a particular director
-		fc.setInitialDirectory(new File ("C:\\Users\\Chinedu\\Documents\\Programming"));
+		//fc.setInitialDirectory(new File ("C:\\Users\\Chinedu\\Documents\\Programming"));
 		//to add a filter
 		//fc.getExtensionFilters().addAll(new ExtensionFilter("Showing PDF Files "," *pdf" ));
-		File seletedfile = fc.showOpenDialog(null);
+		//File seletedfile = fc.showOpenDialog(null);
+		Stage primaryStage = new Stage();
+		File seletedfile = fc.showSaveDialog(primaryStage);
 		//for the image
 		String localUrl = seletedfile.toURI().toURL().toString();
 		Image localImage = new Image(localUrl, false);
