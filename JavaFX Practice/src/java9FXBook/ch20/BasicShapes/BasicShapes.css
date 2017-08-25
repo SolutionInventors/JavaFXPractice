@@ -1,6 +1,10 @@
 /* BasicShapes.css */
 /* CSS that styles various two-dimensional shapes */
 
+
+.root{
+	-fx-background-image: url("/java9FXBook/ch20/BasicShapes/yellowflowers.png");
+}
 Line, Rectangle, Circle, Ellipse, Arc {
     -fx-stroke-width: 10;  
 }
@@ -23,12 +27,12 @@ Rectangle {
 
 Circle {
    -fx-stroke: blue;
-   -fx-fill: radial-gradient(center 50% 50%, radius 60%, white, red);
+   -fx-fill: radial-gradient(center 50% 50%, radius 50%, white, red);
 }
 
 Ellipse {
    -fx-stroke: green;
-   -fx-fill: image-pattern("yellowflowers.png");
+   -fx-fill: image-pattern("/java9FXBook/ch20/BasicShapes/yellowflowers.png");
 }
 
 Arc {

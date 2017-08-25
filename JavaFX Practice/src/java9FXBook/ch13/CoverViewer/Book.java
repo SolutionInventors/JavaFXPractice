@@ -15,11 +15,11 @@ public class Book {
 
    public void setTitle(String title) {this.title = title;}
    
-   public String getThumbImage() {return thumbImage;}
+   public String getThumbImage() {return Path.image + thumbImage;}
 
    public void setThumbImage(String thumbImage) {this.thumbImage = thumbImage;}
 
-   public String getLargeImage() {return largeImage;}
+   public String getLargeImage() {return Path.image +largeImage;}
 
    public void setLargeImage(String largeImage) {this.largeImage = largeImage;}
    

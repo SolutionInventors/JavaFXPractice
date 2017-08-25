@@ -53,14 +53,21 @@ public class CoverViewerController {
          );        
          
       // set custom ListView cell factory
-      booksListView.setCellFactory(
+    /*  booksListView.setCellFactory(
          new Callback<ListView<Book>, ListCell<Book>>() {
             @Override
             public ListCell<Book> call(ListView<Book> listView) {
                return new ImageTextCell();
             }
          }
-      );   
+      );//end booksListView
+*/       //lambda equivalent
+      booksListView.setCellFactory(
+         e -> {return new ImageTextCell();}
+            
+         
+      );//end booksListView
+      
    }     
 }
 
