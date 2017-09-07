@@ -25,7 +25,10 @@ public class DrawStarsController {
          newStar.getPoints().addAll(points); 
 
          // create random Color and set as newStar's fill
-         newStar.setStroke(Color.GREY);
+        newStar.setStroke(Color.rgb(random.nextInt(255), 
+            random.nextInt(255), random.nextInt(255), 
+            random.nextDouble()));
+         // newStar.setStroke(Color.GREY);
          newStar.setFill(Color.rgb(random.nextInt(255), 
             random.nextInt(255), random.nextInt(255), 
             random.nextDouble())); 

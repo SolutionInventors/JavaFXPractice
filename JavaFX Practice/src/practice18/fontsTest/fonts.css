@@ -1,0 +1,13 @@
+.root{
+	-fx-background-color: white;
+}
+#lbl1{
+	-fx-font-size: 25px;
+	-fx-font-family: "Pristina" ;
+}
+
+.label {
+  	-fx-font-family: "Pristina" ;
+    -fx-font-size: 50px;
+    
+}

@@ -3,6 +3,7 @@ package practice11.FromJFXBook;
 import javafx.application.Application;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.scene.Group;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -23,6 +24,7 @@ public class erre extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		primaryStage.setTitle("GridPaneForm ");
+		Group ab;
 		BorderPane root = new BorderPane();
 		Scene scene = new Scene(root, 380, 150, Color.WHITE);
 		GridPane gridpane = new GridPane();

@@ -53,7 +53,7 @@ public class CanvasShapesController {
 
       // draw ellipse with green border and image fill
       gc.setStroke(Color.GREEN);
-      gc.setFill(new ImagePattern(new Image("yellowflowers.png")));
+      gc.setFill(new ImagePattern(new Image(getClass().getResource("yellowflowers.png").toString())));
       gc.fillOval(340, 10, 200, 90);
       gc.strokeOval(340, 10, 200, 90);
 

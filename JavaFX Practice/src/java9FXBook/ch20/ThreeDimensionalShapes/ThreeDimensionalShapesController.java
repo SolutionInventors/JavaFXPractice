@@ -24,14 +24,14 @@ public class ThreeDimensionalShapesController {
 
       // define material for the Cylinder object
       PhongMaterial cylinderMaterial = new PhongMaterial();
-      cylinderMaterial.setDiffuseMap(new Image("yellowflowers.png"));      
+      cylinderMaterial.setDiffuseMap(new Image(getClass().getResource("yellowflowers.png").toString()));      
       cylinder.setMaterial(cylinderMaterial);
 
       // define material for the Sphere object
       PhongMaterial sphereMaterial = new PhongMaterial();
       sphereMaterial.setDiffuseColor(Color.RED);      
       sphereMaterial.setSpecularColor(Color.WHITE);      
-      sphereMaterial.setSpecularPower(32);      
+      sphereMaterial.setSpecularPower(32);     
       sphere.setMaterial(sphereMaterial);
    }
 }

@@ -2,12 +2,12 @@ package java9FXBook.ch20.BallAnimationTimer;
 // BallAnimationTimerController.java
 // Bounce a circle around a window using an AnimationTimer subclass. 
 import java.security.SecureRandom;
+
 import javafx.animation.AnimationTimer;
 import javafx.fxml.FXML;
 import javafx.geometry.Bounds;
 import javafx.scene.layout.Pane;
 import javafx.scene.shape.Circle;
-import javafx.util.Duration;
 
 public class BallAnimationTimerController {
    @FXML private Circle c;

@@ -11,7 +11,7 @@
 <Pane prefHeight="200.0" prefWidth="510.0" 
    xmlns="http://javafx.com/javafx/8.0.60" 
    xmlns:fx="http://javafx.com/fxml/1" 
-   fx:controller="ThreeDimensionalShapesController">
+   fx:controller="java9FXBook.ch20.ThreeDimensionalShapes.ThreeDimensionalShapesController">
    <children>
       <Box fx:id="box" depth="100.0" height="100.0" layoutX="100.0" 
          layoutY="100.0" rotate="30.0" width="100.0">

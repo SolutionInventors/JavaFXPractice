@@ -10,7 +10,7 @@
    stylesheets="@TransitionAnimations.css" 
    xmlns="http://javafx.com/javafx/8.0.60" 
    xmlns:fx="http://javafx.com/fxml/1" 
-   fx:controller="TransitionAnimationsController">
+   fx:controller="java9FXBook.ch20.TransitionAnimations.TransitionAnimationsController">
    <children>
       <Rectangle fx:id="rectangle" height="90.0" layoutX="45.0" 
          layoutY="45.0" width="90.0" />

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rec2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="395.0" prefWidth="397.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="336.0" fitWidth="441.0" layoutX="-2.0" layoutY="59.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Tournament%20App%20BACKGROUND%20-%20Crop.jpg" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="rec1" arcHeight="5.0" arcWidth="5.0" height="62.0" stroke="BLACK" strokeType="INSIDE" width="397.0" />
+      <Rectangle fx:id="rec11" arcHeight="5.0" arcWidth="5.0" height="62.0" layoutY="333.0" opacity="0.61" stroke="BLACK" strokeType="INSIDE" width="399.0" />
+      <Label fx:id="lblmainmenu" alignment="CENTER" layoutX="49.0" layoutY="78.0" prefHeight="62.0" prefWidth="282.0" text="MAIN MENU" textAlignment="CENTER" textFill="#e10000">
+         <font>
+            <Font name="Trebuchet MS Bold" size="51.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="53.0" layoutY="140.0" prefHeight="166.0" prefWidth="270.0">
+         <columnConstraints>
+            <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label alignment="CENTER" prefHeight="26.0" prefWidth="220.0" text="NEW TOURNAMENT">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="26.0" prefWidth="220.0" text="CONTINUE TOURNAMENT" GridPane.rowIndex="1">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="26.0" prefWidth="220.0" text="SETTINGS" GridPane.rowIndex="2">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" prefHeight="26.0" prefWidth="220.0" text="ABOUT" GridPane.rowIndex="3">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+            <Label alignment="CENTER" layoutX="10.0" layoutY="111.0" prefHeight="26.0" prefWidth="220.0" text="HELP" GridPane.rowIndex="4">
+               <font>
+                  <Font name="System Bold" size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </GridPane>
+      <ImageView fitHeight="47.0" fitWidth="55.0" layoutX="2.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Pictures/AAManutd.png" />
+         </image>
+      </ImageView>
+      <Text fill="WHITE" fontSmoothingType="LCD" layoutX="74.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0" text="TOURNAMENT APP" wrappingWidth="149.13671875">
+         <font>
+            <Font name="Trebuchet MS" size="16.0" />
+         </font>
+      </Text>
+      <Text fill="#f2eeee" layoutX="53.0" layoutY="369.0" strokeType="OUTSIDE" strokeWidth="0.0" text="SOLUTION INVENTORS">
+         <font>
+            <Font name="Trebuchet MS" size="15.0" />
+         </font>
+      </Text>
+   </children>
+</AnchorPane>

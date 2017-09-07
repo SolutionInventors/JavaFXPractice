@@ -1,0 +1,23 @@
+/* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+#lblmainmenu{
+	-fx-background-color: rgba(0,0,0,0) ;
+	-fx-text-fill: red;
+}
+
+.label{
+	-fx-background-color: white;
+	-fx-background-radius: 7px;
+}
+
+#lblmainmenu:hover {
+	
+	-fx-scale-x:1;
+	-fx-text-fill: red;
+}  
+
+.label:hover{
+	-fx-text-fill: white;
+	-fx-background-color: black;
+	-fx-scale-x:1.2;
+	
+}

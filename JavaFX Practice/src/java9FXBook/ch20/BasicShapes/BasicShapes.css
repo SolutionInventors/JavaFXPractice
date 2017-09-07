@@ -19,10 +19,12 @@ Line, Rectangle, Circle, Ellipse, Arc {
 }
 
 Rectangle {
-   -fx-stroke: red;
+	 -fx-fill: image-pattern("/java9FXBook/ch20/BasicShapes/yellowflowers.png");
+    -fx-stroke: red;
    -fx-arc-width: 50;
-   -fx-arc-height: 50;
-   -fx-fill: yellow;
+    -fx-arc-height: 50;
+   /*
+   -fx-fill: yellow;*/
 }
 
 Circle {

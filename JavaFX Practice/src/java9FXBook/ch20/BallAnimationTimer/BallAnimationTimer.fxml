@@ -8,7 +8,7 @@
 <Pane id="Pane" fx:id="pane" prefHeight="400.0" 
    prefWidth="600.0" xmlns:fx="http://javafx.com/fxml/1" 
    xmlns="http://javafx.com/javafx/8.0.60" 
-   fx:controller="BallAnimationTimerController">
+   fx:controller="java9FXBook.ch20.BallAnimationTimer.BallAnimationTimerController">
    <children>
       <Circle fx:id="c" fill="DODGERBLUE" layoutX="142.0" layoutY="143.0" 
          radius="40.0" stroke="BLACK" strokeType="INSIDE" 
