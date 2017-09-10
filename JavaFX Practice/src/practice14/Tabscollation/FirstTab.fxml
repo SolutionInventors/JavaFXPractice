@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.ColorPicker?>
-<?import javafx.scene.control.ComboBox?>
-<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="500.0" prefWidth="500.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.111">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ComboBox layoutX="130.0" layoutY="151.0" prefWidth="150.0" />
-      <DatePicker layoutX="-15.0" layoutY="50.0" />
-      <ColorPicker layoutX="218.0" layoutY="288.0" />
+      <ImageView fitHeight="400.0" fitWidth="600.0" layoutX="1.0" layoutY="-1.0" pickOnBounds="true">
+         <image>
+            <Image url="@../../../../../TournamentAppJavaFX/TournamentAppJavaFX/src/com/solutioninventors/tournament/GUI/views/Tournament%20App%20BACKGROUND%20-%20Crop.jpg" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
