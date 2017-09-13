@@ -1,67 +1,56 @@
 package practice14.Tabscollation;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.geometry.HPos;
 import javafx.geometry.Insets;
-import javafx.scene.control.Label;
 import javafx.scene.control.ScrollPane;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.ColumnConstraints;
-import javafx.scene.layout.GridPane;
-import javafx.scene.text.Font;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 
 public class TemplateController {
 	@FXML
 	private ScrollPane scrollPane;
-	private int row;
-	private int col;
+	 TableView<Product> table;
 
 	public void initialize() {
-		// GridPane settings
-		GridPane grid = new GridPane();
-		grid.setPadding(new Insets(25));
-		grid.setHgap(5);
-		grid.setVgap(5);
-		// ColumnSettings for all five columns
-		ColumnConstraints column1 = new ColumnConstraints(70); // fixed for labels
-		ColumnConstraints column2 = new ColumnConstraints(130); // min,pref,max
-		ColumnConstraints column3 = new ColumnConstraints(100);
-		ColumnConstraints column4 = new ColumnConstraints(130);
-		ColumnConstraints column5 = new ColumnConstraints(100);
 
-		grid.getColumnConstraints().addAll(column1, column2, column3, column4, column5);
-		// Variable Delarations
+		 //Name column
+        TableColumn<Product, String> nameColumn = new TableColumn<>("Name");
+        nameColumn.setMinWidth(200);
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
 
-		Image image = new Image("file:nologo.jpg");
-		ImageView logo[] = new ImageView[20];
-		Label playerName[] = new Label[20];
-		Label VS[] = new Label[10];
+        //Price column
+        TableColumn<Product, Double> priceColumn = new TableColumn<>("Price");
+        priceColumn.setMinWidth(100);
+        priceColumn.setCellValueFactory(new PropertyValueFactory<>("price"));
 
-		// initialize testing
-		for (int i = 0; i < logo.length; i++) {
-			logo[i] = new ImageView(image);
-			//logo[i].setImage(image);
-			logo[i].setFitWidth(108);
-			logo[i].setFitHeight(65);
-			logo[i].setPreserveRatio(true);
-			playerName[i] = new Label();
-			playerName[i].setText("Player " + i);
-			if (i < 9)
-				VS[i]= new Label("VS");
-				//VS[i].setText();
-		}
+        //Quantity column
+        TableColumn<Product, String> quantityColumn = new TableColumn<>("Quantity");
+        quantityColumn.setMinWidth(100);
+        quantityColumn.setCellValueFactory(new PropertyValueFactory<>("quantity"));
 
-		int c = 0;
-		for (int i = 0; i < 9; i++) {
-			grid.add(logo[c], 0, i);
-			grid.add(playerName[c], 1, i);
-			grid.add(VS[i], 2, i);
-			grid.add(playerName[c + 1], 3, i);
-			grid.add(logo[c + 1], 4, i);
-			c += 2;
-		}
-		scrollPane.setContent(grid);
-	}
+        table = new TableView<>();
+        table.setItems(getProduct());
+        table.getColumns().addAll(nameColumn, priceColumn, quantityColumn);
+
+       // VBox vBox = new VBox();
+       // vBox.getChildren().addAll(table);
+       
+        scrollPane.setContent(table);
+    }//end method initialize
+
+    //Get all of the products
+    public ObservableList<Product> getProduct(){
+        ObservableList<Product> products = FXCollections.observableArrayList();
+        products.add(new Product("Laptop", 859.00, 20));
+        products.add(new Product("Bouncy Ball", 2.49, 198));
+        products.add(new Product("Toilet", 99.00, 74));
+        products.add(new Product("The Notebook DVD", 19.99, 12));
+        products.add(new Product("Corn", 1.49, 856));
+        return products;
+    }
+
 
 }
