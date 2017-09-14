@@ -31,8 +31,9 @@ public class Test2 extends Application {
 	    try { 
 	      // load a custom font from a specific location (change path!)
 	      // 12 is the size to use
-	      final Font f = Font.loadFont(new FileInputStream(new File("C:\\Users\\Chinedu\\git\\JavaFXPractice\\JavaFX Practice\\src\\practice15\\LayoutandFXML\\TRON.TTF")), 12);
-	      label.setFont(f); // use this font with our label
+	    	final Font f = Font.loadFont(new FileInputStream(new File("Pristina.ttf")), 19);
+	    	
+	    	label.setFont(f); // use this font with our label
 	    } catch (FileNotFoundException e) {
 	      e.printStackTrace();
 	    }

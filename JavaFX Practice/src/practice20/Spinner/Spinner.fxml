@@ -10,7 +10,7 @@
       <Spinner fx:id="spin" editable="true" layoutX="141.0" layoutY="84.0" />
      <Spinner fx:id="spinner" editable="true" >
             <valueFactory>
-                <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="10" initialValue="5" amountToStepBy="1"/>
+                <SpinnerValueFactory.IntegerSpinnerValueFactory min="0" max="1024" initialValue="4" amountToStepBy="4"/>
             </valueFactory>
         </Spinner>
 

@@ -13,12 +13,12 @@ import javafx.stage.Stage;
  * @author ChineduKnight
  *
  */
-public class TestTransition extends Application{
+public class TestSpinner extends Application{
 
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("testing.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("Spinner.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
 			primaryStage.show();
