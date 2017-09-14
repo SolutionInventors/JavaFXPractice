@@ -26,11 +26,12 @@ public class Transition {
 		ft.play();
 	}
 	
+	//load next scene on the same window
 	private void loadNextScene(Pane firstPane, String fxmlfile) {
-		Parent sv;
+		Parent stageView;
 		try {
-			sv = (StackPane) FXMLLoader.load(getClass().getResource(fxmlfile));
-			Scene ns = new Scene(sv);
+			stageView = (StackPane) FXMLLoader.load(getClass().getResource(fxmlfile));
+			Scene ns = new Scene(stageView);
 			
 			Stage cS = (Stage) firstPane.getScene().getWindow();
 			

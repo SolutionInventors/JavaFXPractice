@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="practice14.Tabscollation.TemplateController">
+   <children>
+      <ImageView fitHeight="548.0" fitWidth="662.0" layoutY="-14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../../../../Desktop/Tournament%20App%20BACKGROUND%20-%20Crop.jpg" />
+         </image>
+      </ImageView>
+    
+      <Label layoutX="164.0" layoutY="27.0" text="TOURNAMENT TYPE" textFill="RED">
+         <font>
+            <Font name="Trebuchet MS" size="31.0" />
+         </font></Label>
+      <Line endX="425.0" layoutX="218.0" layoutY="65.0" startX="-220.0" stroke="WHITE" strokeLineCap="ROUND" strokeWidth="3.0" />
+      <Line endX="200.0" layoutX="260.0" layoutY="70.0" startX="-100.0" stroke="WHITE" strokeWidth="3.0" />
+      <ScrollPane fx:id="scrollPane" layoutX="16.0" layoutY="89.0" prefHeight="401.0" prefWidth="612.0">
+        <content>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="200.0" prefWidth="200.0" />
+        </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

@@ -16,11 +16,7 @@ public class SecondSceneController {
 	@FXML
 	private StackPane rootPane;
 	Transition trans = new Transition();
-	public void initialize() {
-		Transition.FadeIn(rootPane);
-		
-		playTransition();
-	}
+
 	private void playTransition() {
 		FadeTransition ft = new FadeTransition();
 		ft.setDuration(Duration.millis(1000));
@@ -57,5 +53,11 @@ public class SecondSceneController {
 			loadprevScene();
 		});
 		ft.play();
+	}
+	public void initialize() {
+		rootPane.setOpacity(0);
+		Transition.FadeIn(rootPane);
+		
+		
 	}
 }
