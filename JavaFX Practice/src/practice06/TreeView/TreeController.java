@@ -5,29 +5,20 @@
  */
 package practice06.TreeView;
 
-import java.net.URL;
-import java.util.ResourceBundle;
-
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.TableView;
 import javafx.scene.control.TreeItem;
 import javafx.scene.control.TreeView;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextFlow;
 
-public class TreeController implements Initializable {
+public class TreeController  {
 	//Image icon = new Image(getClass().getResourceAsStream("/img/icon.png"));
 	Image icon = new Image(getClass().getResourceAsStream("/img/icon2.png"));
-	@FXML
-	TreeView<String> treeview;
+	@FXML TreeView<String> treeview;
 
 	@SuppressWarnings("unchecked")
-	@Override
-	public void initialize(URL location, ResourceBundle resources) {
+	public void initialize() {
 		TreeItem<String> root = new TreeItem<>("This PC",new ImageView(icon));
 		root.setExpanded(true);//to expande by default
 		//Text t = new Text(10, 50, "This is a test");

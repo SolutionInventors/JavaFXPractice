@@ -18,7 +18,7 @@ public class VideoPlayer extends Application {
    
    @Override
    public void start(Stage stage) throws Exception {
-      Parent root = FXMLLoader.load(getClass().getResource("VideoPlayer.fxml"));
+      Parent root = FXMLLoader.load(getClass().getResource("FirstScene.fxml"));
       
       Scene scene = new Scene(root);
       stage.setTitle("Video Player");

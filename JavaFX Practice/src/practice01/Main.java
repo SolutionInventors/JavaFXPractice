@@ -12,8 +12,10 @@ public class Main extends Application {
 		try {
 			BorderPane root = new BorderPane();
 			Scene scene = new Scene(root,400,400);
-			scene.getStylesheets().add(getClass().getResource("practice01.css").toExternalForm());
+		//	scene.getStylesheets().add(getClass().getResource("practice01.css").toExternalForm());
 			primaryStage.setScene(scene);
+			primaryStage.resizableProperty().set(false);
+			
 			primaryStage.show();
 		} catch(Exception e) {
 			e.printStackTrace();

@@ -1,29 +1,37 @@
 package java9FXBook.ch20.VideoPlayer;
+import java.io.IOException;
 // VideoPlayerController.java
 // Using Media, MediaPlayer and MediaView to play a video. 
 import java.net.URL;
 
 import org.controlsfx.dialog.ExceptionDialog;
 
-import javafx.beans.binding.Bindings;
-import javafx.beans.property.DoubleProperty;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
-import javafx.scene.media.MediaView;
+import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class VideoPlayerController {  
-   @FXML private MediaView mediaView;
+   //@FXML private MediaView mediaView;
    @FXML private Button playPauseButton;
+   @FXML private Button btnhide;
    private MediaPlayer mediaPlayer;
    private boolean playing = false;
-      
+   @FXML private BorderPane  rootPane;
    public void initialize() {
       // get URL of the video file
-      URL url = VideoPlayerController.class.getResource("sts117.mp4");
+      //URL url = VideoPlayerController.class.getResource("sts117.mp4");
+      URL url = VideoPlayerController.class.getResource("don.mp3");
+     
       
       // create a Media object for the specified URL
       Media media = new Media(url.toExternalForm());
@@ -32,7 +40,7 @@ public class VideoPlayerController {
       mediaPlayer = new MediaPlayer(media);
       
       // specify which MediaPlayer to display in the MediaView
-      mediaView.setMediaPlayer(mediaPlayer); 
+   //   mediaView.setMediaPlayer(mediaPlayer); 
 
       // set handler to be called when the video completes playing
       mediaPlayer.setOnEndOfMedia(
@@ -57,7 +65,7 @@ public class VideoPlayerController {
       );
       
       // set handler that resizes window to video size once ready to play
-      mediaPlayer.setOnReady(
+     /* mediaPlayer.setOnReady(
          new Runnable() {
             public void run() {
                DoubleProperty width = mediaView.fitWidthProperty();
@@ -68,7 +76,7 @@ public class VideoPlayerController {
                   mediaView.sceneProperty(), "height")); 
             }
          }
-      );
+      );*/
    }  
    
    // toggle media playback and the text on the playPauseButton
@@ -85,19 +93,37 @@ public class VideoPlayerController {
          mediaPlayer.pause();
       }
    } 
+
+   @FXML
+   private void hideMe(ActionEvent e) throws IOException {
+	   ((Node)e.getSource()).getScene().getWindow().hide();
+		// loadNextScene(rootPane);
+		 Stage primaryStage = new Stage();
+			Parent root = FXMLLoader.load(getClass().getResource("FirstScene.fxml"));
+			Scene scene = new Scene(root);
+			primaryStage.setScene(scene);
+			primaryStage.show();
+			Stage myStage = (Stage)btnhide.getScene().getWindow();
+			primaryStage.setOnHidden(t -> myStage.show());
+			primaryStage.setTitle("Welcome hahaha");
+			
+			
+   }
+   private void loadNextScene(Pane firstPane) {
+		Parent sv;
+		try {
+			sv = (Pane) FXMLLoader.load(getClass().getResource("FirstScene.fxml"));
+			Scene ns = new Scene(sv);
+			
+			Stage cS = (Stage) firstPane.getScene().getWindow();
+			cS.setScene(ns);
+		
+		
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	
+	
+	}
 }
 
-/**************************************************************************
- * (C) Copyright 1992-2018 by Deitel & Associates, Inc. and               *
- * Pearson Education, Inc. All Rights Reserved.                           *
- *                                                                        *
- * DISCLAIMER: The authors and publisher of this book have used their     *
- * best efforts in preparing the book. These efforts include the          *
- * development, research, and testing of the theories and programs        *
- * to determine their effectiveness. The authors and publisher make       *
- * no warranty of any kind, expressed or implied, with regard to these    *
- * programs or to the documentation contained in these books. The authors *
- * and publisher shall not be liable in any event for incidental or       *
- * consequential damages in connection with, or arising out of, the       *
- * furnishing, performance, or use of these programs.                     *
- *************************************************************************/
