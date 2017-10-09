@@ -12,6 +12,7 @@ import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
 import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -25,7 +26,10 @@ public class Test extends Application {
     Stage window;
     Scene scene;
     Button button;
-    ArrayList<ComboBox<String>> comboGuesses = new ArrayList<ComboBox<String>>();
+    Label test;
+    int i;
+    int iii;
+    ArrayList<ComboBox<String>> comboGuesses = new ArrayList<>();
 
     public static void main(String[] args) {
         launch(args);
@@ -37,11 +41,31 @@ public class Test extends Application {
         ObservableList<String> abc = FXCollections.observableArrayList("W","D","L");
         window.setTitle("ComboBox Demo");
         button = new Button("Submit");
-        comboGuesses.add(0, new ComboBox<String>());
-        comboGuesses.get(0).maxHeight(Region.USE_COMPUTED_SIZE);
-        comboGuesses.get(0).getItems().addAll(abc);
-        comboGuesses.add(1, new ComboBox<String>());
-        comboGuesses.get(1).getItems().addAll("A","B","R");
+       for (int i = 0; i < 6; i++) {
+    	   comboGuesses.add(i, new ComboBox<String>());
+           comboGuesses.get(i).maxHeight(Region.USE_COMPUTED_SIZE);
+           comboGuesses.get(i).getItems().addAll(abc);
+	}
+       i=0;
+        for (i = 0; i < 2; i+=2) {
+        	System.out.println("cureent value of i" + i);
+        	 comboGuesses.get(i).setOnAction(e->{
+        		 iii=i;
+        		 iii++;
+        		 System.out.println(iii);
+        		 
+             	comboGuesses.get(iii).setValue("L");
+             });
+		}
+      
+        /*comboGuesses.add(1, new ComboBox<String>());
+        comboGuesses.get(1).getItems().addAll("W","L","D");
+        test = new Label("NOthing here");
+        test.setText("NOthing here");
+        test.setMaxSize(Region.USE_COMPUTED_SIZE, Region.USE_COMPUTED_SIZE);
+        test.textProperty().bind(comboGuesses.get(0).valueProperty());*/
+       
+        //comboGuesses.get(0).textp
 		
         button.setOnAction(e -> printMovie());
         
