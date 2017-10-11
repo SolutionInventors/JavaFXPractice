@@ -1,4 +1,4 @@
-package practice24.Animation;
+package practice25.TextViewlisten;
 
 import javafx.animation.TranslateTransition;
 import javafx.beans.property.DoubleProperty;
@@ -16,37 +16,26 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class NewsController {
+public class NewAniControl {
 	@FXML
 	private Group nodegroup;
 	@FXML
 	private AnchorPane root;
 	
 	
-/*	public void initialize() {
-		//Stage cs = (Stage) nodegroup.getScene().getWindow();
-		nodegroup = createTickerControl((Stage) nodegroup.getScene().getWindow(),78);	
-		System.out.println("called");
-		root.getChildren().add(new Label());
-		}
-	*//**
-	 * Returns a news ticker control 
-	 * @param scene
-	 * @param buttonGroup
-	 * @return 
-	 */
+
 	
 	public void set(Stage stage) {
-		nodegroup = createTickerControl(stage,78);
+		 createTickerControl(stage,78);
 	}
-	private Group createTickerControl(Stage stage, double rightPadding) {
+	private void createTickerControl(Stage stage, double rightPadding) {
 	    Scene scene = stage.getScene();
 	   
 
 	    // create ticker area
-	    Group tickerArea = new Group();
-	    Rectangle tickerRect = new Rectangle(scene.getWidth(), 30);
-	   tickerRect.getStyleClass().add(" -fx-arc-width: 15px;\r\n" + 
+	 //   nodegroup = new Group();
+	    Rectangle tickerRect = new Rectangle(30, 30);
+	   tickerRect.setStyle(" -fx-arc-width: 15px;\r\n" + 
 	   		"    -fx-arc-height: 20px;\r\n" + 
 	   		"    -fx-fill: rgba(0,0,0, .55);\r\n" + 
 	   		"    -fx-stroke: rgba(255, 255, 255, .70);\r\n" + 
@@ -54,15 +43,15 @@ public class NewsController {
 	   		"    -fx-smooth: true;");
 	   //button.setStyle("-fx-font-size: 30px;");
 
-	    Rectangle clipRegion = new Rectangle(scene.getWidth(), 30);
-	    clipRegion.getStyleClass().add("-fx-arc-width: 15px;\r\n" + 
+	    Rectangle clipRegion = new Rectangle(30, 30);
+	    clipRegion.setStyle("-fx-arc-width: 15px;\r\n" + 
 	    		"    -fx-arc-height: 20px;\r\n" + 
 	    		"    -fx-stroke-width: 1;");
-	    tickerArea.setClip(clipRegion);
+	    nodegroup.setClip(clipRegion);
 
 	    // Resize the ticker area when the window is resized
-	    tickerArea.setTranslateX(6);
-	    tickerArea.translateYProperty()
+	    nodegroup.setTranslateX(6);
+	    nodegroup.translateYProperty()
 	            .bind(scene.heightProperty()
 	                       .subtract(tickerRect.getHeight() + 6));
 	    tickerRect.widthProperty()
@@ -71,7 +60,7 @@ public class NewsController {
 	    clipRegion.widthProperty()
 	              .bind(scene.widthProperty()
 	                         .subtract(rightPadding));
-	    tickerArea.getChildren().add(tickerRect);
+	    nodegroup.getChildren().add(tickerRect);
 
 	    // news feed container
 	    FlowPane tickerContent = new FlowPane();
@@ -91,7 +80,7 @@ public class NewsController {
 
 	    tickerContent.translateYProperty().bind(centerContentY);
 
-	    tickerArea.getChildren().add(tickerContent);
+	    nodegroup.getChildren().add(tickerContent);
 
 	    // scroll news feed 
 	    TranslateTransition tickerScroller = new TranslateTransition();
@@ -116,6 +105,5 @@ public class NewsController {
 	        tickerScroller.play();
 	    });
 
-	    return tickerArea;
 	}
 }

@@ -1,0 +1,38 @@
+/*
+File: photo-viewer.css
+Book: JavaFX 8 Introduction by Example by Apress publishing
+Info: Chapter 5 Graphics with JavaFX
+Author: Carl Dea
+*/
+.root {
+    -fx-arrow-fill: rgba(255, 255, 255, .90); 
+}
+.button-panel {
+    -fx-arc-width: 15px;
+    -fx-arc-height: 20px;
+    -fx-fill: rgba(0,0,0, .55);
+    -fx-stroke: rgba(255, 255, 255, .70);
+    -fx-stroke-width: 1;
+}
+.left-arrow {
+    -fx-fill: -fx-arrow-fill;
+}
+
+.right-arrow {
+    -fx-fill: -fx-arrow-fill;
+    -fx-translate-x: 40;
+}
+.ticker-border {
+    -fx-arc-width: 15px;
+    -fx-arc-height: 20px;
+    -fx-fill: rgba(0,0,0, .55);
+    -fx-stroke: rgba(255, 255, 255, .70);
+    -fx-stroke-width: 1;
+    -fx-smooth: true;
+}
+.ticker-clip-region {
+    -fx-arc-width: 15px;
+    -fx-arc-height: 20px;
+    -fx-stroke-width: 1;
+}
+

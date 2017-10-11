@@ -7,7 +7,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Group;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.FlowPane;
 import javafx.scene.paint.Color;
@@ -16,48 +15,26 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
-public class NewsController {
-	@FXML
-	private Group nodegroup;
-	@FXML
-	private AnchorPane root;
+public class finalTestController {
+	@FXML AnchorPane root;
 	
-	
-/*	public void initialize() {
-		//Stage cs = (Stage) nodegroup.getScene().getWindow();
-		nodegroup = createTickerControl((Stage) nodegroup.getScene().getWindow(),78);	
-		System.out.println("called");
-		root.getChildren().add(new Label());
-		}
-	*//**
-	 * Returns a news ticker control 
-	 * @param scene
-	 * @param buttonGroup
-	 * @return 
-	 */
-	
-	public void set(Stage stage) {
-		nodegroup = createTickerControl(stage,78);
+	public void load() {
+		System.out.println("i am called");
+		Stage cS = (Stage) root.getScene().getWindow();
+		Group newsTicker = createTickerControl(cS, 78);
+		root.getChildren().add(newsTicker);
 	}
+	
 	private Group createTickerControl(Stage stage, double rightPadding) {
 	    Scene scene = stage.getScene();
-	   
 
 	    // create ticker area
 	    Group tickerArea = new Group();
 	    Rectangle tickerRect = new Rectangle(scene.getWidth(), 30);
-	   tickerRect.getStyleClass().add(" -fx-arc-width: 15px;\r\n" + 
-	   		"    -fx-arc-height: 20px;\r\n" + 
-	   		"    -fx-fill: rgba(0,0,0, .55);\r\n" + 
-	   		"    -fx-stroke: rgba(255, 255, 255, .70);\r\n" + 
-	   		"    -fx-stroke-width: 1;\r\n" + 
-	   		"    -fx-smooth: true;");
-	   //button.setStyle("-fx-font-size: 30px;");
+	    tickerRect.getStyleClass().add("ticker-border");
 
 	    Rectangle clipRegion = new Rectangle(scene.getWidth(), 30);
-	    clipRegion.getStyleClass().add("-fx-arc-width: 15px;\r\n" + 
-	    		"    -fx-arc-height: 20px;\r\n" + 
-	    		"    -fx-stroke-width: 1;");
+	    clipRegion.getStyleClass().add("ticker-clip-region");
 	    tickerArea.setClip(clipRegion);
 
 	    // Resize the ticker area when the window is resized
@@ -112,10 +89,11 @@ public class NewsController {
 	        tickerScroller.playFromStart();
 	    });
 	    // start ticker after nodes are shown.
-	    stage.setOnShown( windowEvent -> {
+	   /* stage.setOnShown( windowEvent -> {
 	        tickerScroller.play();
-	    });
-
+	    });*/
+	    tickerScroller.play();
 	    return tickerArea;
 	}
+	 
 }

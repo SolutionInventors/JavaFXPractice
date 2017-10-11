@@ -6,6 +6,8 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.geometry.HPos;
 import javafx.geometry.Insets;
+import javafx.print.PrinterJob;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -126,6 +128,8 @@ public class HeroPicker extends Application {
 			for (String string : choosenbreakers) {
 				System.out.println(string);
 			}
+			
+			printSetup(candidatesListView, primaryStage);
 		});
 		VBox vbox = new VBox(5);
 		vbox.getChildren().addAll(sendRightButton, sendLeftButton, sendUp, senddown,print);
@@ -137,6 +141,39 @@ public class HeroPicker extends Application {
 		primaryStage.setScene(scene);
 		primaryStage.show();
 	}
+	private void printSetup(Node node, Stage owner) 
+	{
+		// Create the PrinterJob		
+		PrinterJob job = PrinterJob.createPrinterJob();
+		//job.showPageSetupDialog(owner);
+	
+		if (job == null) 
+		{
+			return;
+		}
+
+		// Show the print setup dialog
+		boolean proceed = job.showPrintDialog(owner);
+		
+		if (proceed) 
+		{
+			print(job, node);
+		}
+	}
+	
+	private void print(PrinterJob job, Node node) 
+	{
+		// Set the Job Status Message
+		//jobStatus.textProperty().bind(job.jobStatusProperty().asString());
+		
+		// Print the node
+		boolean printed = job.printPage(node);
+	
+		if (printed) 
+		{
+			job.endJob();
+		}
+	}	
 
 	public static void main(String[] args) {
 		launch(args);

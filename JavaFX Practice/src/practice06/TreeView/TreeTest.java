@@ -10,7 +10,6 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import javafx.stage.StageStyle;
 
 public class TreeTest extends Application{
 
@@ -22,7 +21,7 @@ public class TreeTest extends Application{
 			Parent root = FXMLLoader.load(getClass().getResource("\\deeper/Tree.fxml"));
 																//practice06\TreeView\deeper\Tree.fxml
 			Scene scene = new Scene(root);
-			primaryStage.initStyle(StageStyle.TRANSPARENT);
+		//	primaryStage.initStyle(StageStyle.TRANSPARENT);
 			primaryStage.setScene(scene);
 			primaryStage.show();
 			primaryStage.setTitle("Tree View");

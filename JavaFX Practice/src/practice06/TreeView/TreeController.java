@@ -60,9 +60,14 @@ public class TreeController  {
 	//both in on context menu request and on mouse clicked
 	
 	public void mouseClicked(MouseEvent e) {
-		if (e.getClickCount() == 2) {
-			TreeItem<String> item = treeview.getSelectionModel().getSelectedItem();
-			System.out.println(item.getValue());
+		TreeItem<String> item = treeview.getSelectionModel().getSelectedItem();
+		System.out.println(item.getValue());
+		//if (e.getClickCount() == 2) {
+			
+			if (item.getValue().equals("Desktop")) {
+				System.out.println("I have caught you");
+		//	}
+			
 		}
 	}
 
