@@ -9,7 +9,7 @@
 	-fx-background-color: rgb(128,128,128) 
 }
 .button:hover{
-		-fx-font-weight: bold;
+	-fx-font-weight: bold;
 	-fx-background-color: white;
 	-fx-background-radius: 22;
 	-fx-font-size: 16;
