@@ -15,6 +15,7 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.Region;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
@@ -73,6 +74,10 @@ public class Main extends Application {
         
         VBox vBox = new VBox();
         vBox.setPadding(new Insets(10,10,10,10));
+       // vBox.setMaxHeight(arg0);
+       vBox.setPrefSize(Region.USE_COMPUTED_SIZE,Region.USE_COMPUTED_SIZE);//width , height
+      // vBox.USE_PREF_SIZE;
+      //  vBox.setMaxSize(1000, 500);
         vBox.getChildren().addAll(new Label("Standing"),new Label("Group A"),table[0],new Label("Group B"),table[1],btn,table[2]);
         
         ScrollPane sp = new ScrollPane(vBox);

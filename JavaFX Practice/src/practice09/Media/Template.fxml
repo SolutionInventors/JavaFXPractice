@@ -19,6 +19,6 @@
       <Button fx:id="btnstop" layoutX="109.0" layoutY="242.0" mnemonicParsing="false"  onAction="#stop"  prefHeight="25.0" prefWidth="57.0" text="Stop" />
       <Button fx:id="btnchangesong" layoutX="207.0" layoutY="242.0" onAction="#changeSong"  mnemonicParsing="false" text="Change Song" />
       <Slider fx:id="seekslider" layoutX="19.0" layoutY="215.0" />
-      <Slider fx:id="volumeslider" layoutX="191.0" layoutY="215.0" />
+      <Slider fx:id="volumeSlider" layoutX="191.0" layoutY="215.0" />
    </children>
 </AnchorPane>

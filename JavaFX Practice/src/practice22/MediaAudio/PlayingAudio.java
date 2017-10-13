@@ -1,9 +1,6 @@
 package practice22.MediaAudio;
-import java.io.File;
-import java.io.FilenameFilter;
+
 import java.net.MalformedURLException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Random;
 import javafx.application.*;
 import javafx.beans.value.ChangeListener;
@@ -29,9 +26,8 @@ public class PlayingAudio extends Application {
    private MediaPlayer mediaPlayer;
    private Point2D anchorPt;
    private Point2D previousLocation;
-   private MediaView mediaView = null;
    private ChangeListener<Duration> progressListener;
-  
+
    private static Stage PRIMARY_STAGE;
    private static final String STOP_BUTTON_ID = "stop-button";
    private static final String PLAY_BUTTON_ID = "play-button";
@@ -40,8 +36,6 @@ public class PlayingAudio extends Application {
    private static final String VIS_CONTAINER_ID = "viz-container";
    private static final String SEEK_POS_SLIDER_ID = "seek-position-slider";
 
-   
-  // private ChangeListener<Duration> progressChangeListener;
    /**
     * @param args the command line arguments
     */
@@ -99,9 +93,7 @@ public class PlayingAudio extends Application {
                   closeButton);
       
       primaryStage.show();
-   }//end the stage
-   
-   
+   }
 
    /**
     * Initialize the stage to allow the mouse cursor to move the application
@@ -331,82 +323,9 @@ public class PlayingAudio extends Application {
     * @param url The URL pointing to an audio file
     */
    private void playMedia(String url) {
-	   Scene scene = PRIMARY_STAGE.getScene();
-      //#############################
-	    // determine the source directory for the playlist (either the first parameter to the program or a 
-	    final List<String> params = getParameters().getRaw();
-	    final File dir = (params.size() > 0)
-	      ? new File(params.get(0))
-	      : new File("C:\\Users\\Chinedu\\Music\\Sample Music");
-	    if (!dir.exists() && dir.isDirectory()) {
-	      System.out.println("Cannot find audio source directory: " + dir);
-	    }
-
-	    // create some media players.
-	    final List<MediaPlayer> players = new ArrayList<MediaPlayer>();
-	    for (String file : dir.list(new FilenameFilter() {
-	      @Override public boolean accept(File dir, String name) {
-	        return name.endsWith(".mp3");
-	      }
-	    })) players.add(createPlayer("file:///" + (dir + "\\" + file).replace("\\", "/").replaceAll(" ", "%20")));
-	    if (players.isEmpty()) {
-	      System.out.println("No audio found in " + dir);
-	      return;
-	    }
-	    
-	    
-	    // play each audio file in turn.
-	    for (int i = 0; i < players.size(); i++) {
-	      final MediaPlayer player     = players.get(i);
-	      final MediaPlayer nextPlayer = players.get((i + 1) % players.size());
-	      player.setOnEndOfMedia(new Runnable() {
-	        @Override public void run() {
-	          player.currentTimeProperty().removeListener(progressListener);
-	          mediaView.setMediaPlayer(nextPlayer);
-	          nextPlayer.play();
-	        }
-	      });
-	    
-	      if (player != null) {
-	    	  player.pause();
-	    	  player.setOnPaused(null);
-	    	  player.setOnPlaying(null);
-	    	  player.setOnReady(null);
-	    	  player.currentTimeProperty()
-	                     .removeListener(progressListener);
-	    	  player.setAudioSpectrumListener(null);
-	       }
-	       Media media = new Media(url);
-	       
-	       //player = new MediaPlayer(media);
-	       
-	       // as the media is playing move the slider for progress
-	       player.currentTimeProperty()
-	                  .addListener(progressListener);
-
-	       player.setOnReady(() -> {
-	         
-	          updatePlayAndPauseButtons(false);
-	          Slider progressSlider = 
-	                (Slider) scene.lookup("#" + SEEK_POS_SLIDER_ID);
-	          progressSlider.setValue(0);
-	          progressSlider.setMax(player.getMedia()
-	                                           .getDuration()
-	                                           .toSeconds());
-	          player.play();
-	       }); // setOnReady()
-	       
-	       
-	    
-	    }//end for loop
-	    
-	    //#######################################
-	   
-	   
-	   
-	  
+      Scene scene = PRIMARY_STAGE.getScene();
       
-/*      if (mediaPlayer != null) {
+      if (mediaPlayer != null) {
          mediaPlayer.pause();
          mediaPlayer.setOnPaused(null);
          mediaPlayer.setOnPlaying(null);
@@ -424,7 +343,10 @@ public class PlayingAudio extends Application {
                  .addListener(progressListener);
 
       mediaPlayer.setOnReady(() -> {
-        
+         // display media's metadata 
+         media.getMetadata().forEach( (name, val) -> {
+            System.out.println(name + ": " + val);
+         });
          updatePlayAndPauseButtons(false);
          Slider progressSlider = 
                (Slider) scene.lookup("#" + SEEK_POS_SLIDER_ID);
@@ -434,7 +356,7 @@ public class PlayingAudio extends Application {
                                           .toSeconds());
          mediaPlayer.play();
       }); // setOnReady()
-*/      
+      
       // back to the beginning
       mediaPlayer.setOnEndOfMedia( ()-> {
          updatePlayAndPauseButtons(true);
@@ -471,15 +393,7 @@ public class PlayingAudio extends Application {
      }); // setAudioSpectrumListener()
 
    }
-   private MediaPlayer createPlayer(String aMediaSrc) {
-	    final MediaPlayer player = new MediaPlayer(new Media(aMediaSrc));
-	    player.setOnError(new Runnable() {
-	      @Override public void run() {
-	        System.out.println("Media error occurred: " + player.getError());
-	      }
-	    });
-	    return player;
-	  }
+  
    /**
    * Sets play button visible and pause button not visible when 
    * playVisible is true otherwise the opposite.
