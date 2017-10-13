@@ -204,7 +204,7 @@ public class AudioPlaylist extends Application {
   public void start(Stage stage) throws Exception {
 
       final Stage window = new Stage();
-      frombook(window);
+     // frombook(window);
       window.hide();
       window.setX(10);
      // mediaView.getMediaPlayer().stop();

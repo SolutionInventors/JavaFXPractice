@@ -16,7 +16,7 @@ public class Print extends Application {
 		Node node = new Circle(100, 200, 200);
 		PrinterJob job = PrinterJob.createPrinterJob();
 		if (job != null) {
-			boolean success = job.printPage(node);
+			boolean success = job.printPage(node); 
 			if (success) {
 				job.endJob();
 			}
