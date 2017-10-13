@@ -29,8 +29,8 @@ public class VideoPlayerController {
    @FXML private BorderPane  rootPane;
    public void initialize() {
       // get URL of the video file
-      //URL url = VideoPlayerController.class.getResource("sts117.mp4");
-      URL url = VideoPlayerController.class.getResource("don.mp3");
+      URL url = VideoPlayerController.class.getResource("sts117.mp4");
+    //  URL url = VideoPlayerController.class.getResource("don.mp3");
      
       
       // create a Media object for the specified URL

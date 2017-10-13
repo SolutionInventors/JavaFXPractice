@@ -41,7 +41,7 @@ public class BossesAndEmployees extends Application {
 
         // candidates label
         Label candidatesLbl = new Label("Boss");
-        GridPane.setHalignment(candidatesLbl, HPos.CENTER);
+        GridPane.setHalignment(candidatesLbl, HPos.LEFT);
         gridpane.add(candidatesLbl, 0, 0);
 
         // List of leaders
