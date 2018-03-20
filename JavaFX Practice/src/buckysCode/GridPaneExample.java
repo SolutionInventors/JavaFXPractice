@@ -1,8 +1,6 @@
-package practice04;
-
+package buckysCode;
 import javafx.application.Application;
 import javafx.geometry.Insets;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -10,7 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.stage.Stage;
 
-public class GridPaneTest extends Application {
+public class GridPaneExample extends Application {
 
     Stage window;
 
@@ -31,8 +29,6 @@ public class GridPaneTest extends Application {
 
         //Name Label - constrains use (child, column, row)
         Label nameLabel = new Label("Username:");
-        //tmp[currArrPos].setAlignment(Pos.CENTER);
-        nameLabel.setAlignment(Pos.CENTER);
         GridPane.setConstraints(nameLabel, 0, 0);
 
         //Name Input

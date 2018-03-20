@@ -37,13 +37,6 @@ public class FileChooserController {
 	GridPane gridp;
 	
 	Spinner<Integer> testspin= new Spinner<Integer>(4,24,4,4);
-	private int  setvalue() {
-		int a = testspin.getValue();
-		if (a==2) {
-			return 4;
-		}else
-			return a+=a;
-	}
 	Button btn = new Button("Show spin Value");
 	Button btn4= new Button("Show spin Value");
 	public void initialize() {
@@ -109,9 +102,7 @@ public class FileChooserController {
 			 * Image image = new Image(url, true);
 			 * ImageView imageView = new ImageView(image);
 			 */
-		}else
-			System.out.println("Nothing here");
-
+		}
 	}
 
 	public void btnClicked2(ActionEvent e) {

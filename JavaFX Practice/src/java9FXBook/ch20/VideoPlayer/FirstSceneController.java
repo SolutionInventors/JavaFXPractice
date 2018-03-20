@@ -37,6 +37,7 @@ public class FirstSceneController {
 			 ((Node)e.getSource()).getScene().getWindow().hide();
 		}
 	   }
+		@SuppressWarnings("unused")
 		private void loadNextScene(Pane firstPane) {
 			Parent sv;
 			try {

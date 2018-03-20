@@ -1,4 +1,4 @@
-package databaseapp;
+package practice28.Graph;
 	
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -7,16 +7,16 @@ import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 
-public class Main extends Application {
-
+public class TestChart extends Application {
 	@Override
 	public void start(Stage primaryStage) {
 		try {
-			Parent root = FXMLLoader.load(getClass().getResource("Student.fxml"));
+			//BorderPane root = new BorderPane();
+			Parent root = FXMLLoader.load(getClass().getResource("Graph.fxml"));
 			Scene scene = new Scene(root);
 			primaryStage.setScene(scene);
+			//scene.getStylesheets().add(getClass().getResource("Graph.css").toExternalForm());
 			primaryStage.show();
-			primaryStage.setTitle("Student");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
